@@ -1,0 +1,16 @@
+{
+  "name": "preset-env-modules",
+  "version": "1.0.0",
+  "description": "Demonstrate Babel Preset Env with ESModules Support.",
+  "main": "index.js",
+  "author": "Kristofer Baxter",
+  "license": "MIT",
+  "scripts": {
+    "test": "rm -rf dist/*; BABEL_ENV=esmodules yarn babel input.js -o dist/output-modules.js; BABEL_ENV=nomodules yarn babel input.js -o dist/output-nomodules.js"
+  },
+  "dependencies": {
+    "@babel/cli": "v7.0.0-beta.37",
+    "@babel/core": "v7.0.0-beta.37",
+    "@babel/preset-env": "v7.0.0-beta.37"
+  }
+}

@@ -35,6 +35,7 @@ polka()
     <head>
       <meta charset="utf-8">
       <title>Modules / No Modules Example</title>
+      <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
       <script type="module" src="/js/output-modules.js"></script>
       <script nomodule src="/js/output-nomodules.js"></script>
     </head>

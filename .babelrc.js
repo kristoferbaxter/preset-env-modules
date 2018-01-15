@@ -16,6 +16,11 @@ module.exports = function(context) {
           exclude: ['transform-regenerator'],
         }
       ],
+    ],
+    plugins: [
+      ['inline-replace-variables', {
+        "__MODULES_SUPPORTED__": env === 'esmodules' ? 'yes' : 'no'
+      }]
     ]
   };
 };

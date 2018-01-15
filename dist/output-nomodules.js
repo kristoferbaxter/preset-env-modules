@@ -17,3 +17,7 @@ function () {
 
   return Foo;
 }();
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.appendChild(document.createTextNode("Are modules supported?: " + "no"));
+});

@@ -9,3 +9,7 @@ class Foo {
     console.log(this.text);
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.appendChild(document.createTextNode(`Are modules supported?: ${__MODULES_SUPPORTED__}`));
+});

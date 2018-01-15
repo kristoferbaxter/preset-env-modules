@@ -10,3 +10,7 @@ class Foo {
   }
 
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.body.appendChild(document.createTextNode(`Are modules supported?: ${"yes"}`));
+});

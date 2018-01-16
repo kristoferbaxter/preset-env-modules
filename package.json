@@ -6,8 +6,11 @@
   "author": "Kristofer Baxter",
   "license": "MIT",
   "scripts": {
-    "start": "yarn test; cp server.js dist/server.js; node dist/server.js",
-    "test": "rm -rf dist/*; BABEL_ENV=esmodules yarn babel input.js -o dist/output-modules.js; BABEL_ENV=nomodules yarn babel input.js -o dist/output-nomodules.js"
+    "start": "yarn clean; yarn test; cp server.js dist/server.js; node dist/server.js",
+    "clean": "rm -rf dist/*",
+    "test": "yarn build:modules; yarn build:nomodules",
+    "build:modules": "BABEL_ENV=esmodules yarn babel input.js -o dist/output-modules.js",
+    "build:nomodules": "BABEL_ENV=nomodules yarn babel input.js -o dist/output-nomodules.js"
   },
   "dependencies": {
     "polka": "^0.2.0"

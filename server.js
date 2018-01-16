@@ -4,7 +4,7 @@ const polka = require('polka');
 
 polka()
   .get('/js/:file', (req, res) => {
-    const file = path.resolve(__dirname, 'dist', req.params.file);
+    const file = path.resolve(__dirname, req.params.file);
     let stream = fs.createReadStream(file);
 
     stream.on('error', error => {

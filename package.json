@@ -6,16 +6,16 @@
   "author": "Kristofer Baxter",
   "license": "MIT",
   "scripts": {
-    "start": "yarn test; cp server.js dist/server.js; node server.js",
+    "start": "yarn test; cp server.js dist/server.js; node dist/server.js",
     "test": "rm -rf dist/*; BABEL_ENV=esmodules yarn babel input.js -o dist/output-modules.js; BABEL_ENV=nomodules yarn babel input.js -o dist/output-nomodules.js"
   },
   "dependencies": {
-    "@babel/cli": "v7.0.0-beta.37",
-    "@babel/core": "v7.0.0-beta.37",
-    "@babel/preset-env": "v7.0.0-beta.37",
     "polka": "^0.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "v7.0.0-beta.37",
+    "@babel/core": "v7.0.0-beta.37",
+    "@babel/preset-env": "v7.0.0-beta.37",
     "babel-plugin-inline-replace-variables": "^1.3.1"
   }
 }

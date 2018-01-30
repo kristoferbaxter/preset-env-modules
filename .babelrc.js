@@ -13,7 +13,6 @@ module.exports = function(context) {
           modules: false,
           loose: true,
           debug: true,
-          exclude: ['transform-regenerator'],
         }
       ],
     ],

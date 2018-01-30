@@ -2,7 +2,7 @@
 
 With the release of Babel 7 (beta 39 and beyond) one can now specifically target devices supporting ESModules.
 
-This can greatly reduce the amount of JavaScript sent to modern devices without adding significant effort.
+This can greatly reduce the amount of JavaScript sent to modern devices with minimal effort.
 
 This example shows how one can apply the technique.
 

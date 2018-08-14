@@ -1,10 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const polka = require('polka');
+import fs from 'fs';
+import path from 'path';
+import polka from 'polka';
+import expose from './expose.js';
 
 polka()
   .get('/js/:file', (req, res) => {
-    const file = path.resolve(__dirname, req.params.file);
+    const file = path.resolve(expose.__dirname, req.params.file);
     let stream = fs.createReadStream(file);
 
     stream.on('error', error => {
@@ -29,6 +30,7 @@ polka()
     });
   })
   .get('/', (req, res) => {
+    res.setHeader('Link', '</js/output-modules.js>; rel=preload; crossorigin=anonymous; as=script');
     res.end(`
     <!doctype html>
     <html>
@@ -36,7 +38,8 @@ polka()
       <meta charset="utf-8">
       <title>Modules / No Modules Example</title>
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-      <script type="module" src="/js/output-modules.js"></script>
+      <script>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()},!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+      <script type="module" crossorigin="anonymous" src="/js/output-modules.js"></script>
       <script nomodule src="/js/output-nomodules.js"></script>
     </head>
     <body>

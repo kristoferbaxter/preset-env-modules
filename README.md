@@ -1,6 +1,6 @@
 # Demonstrate @babel/preset-env with ESModules targetting
 
-With the release of Babel 7 (beta 39 and beyond) one can now specifically target devices supporting ESModules.
+With the release of Babel 7 one can now specifically target devices supporting ESModules.
 
 This can greatly reduce the amount of JavaScript sent to modern devices with minimal effort.
 

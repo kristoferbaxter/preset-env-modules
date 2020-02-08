@@ -17,7 +17,7 @@
     "build:nomodules": "BABEL_ENV=nomodules yarn babel input.mjs -o dist/output-nomodules.js"
   },
   "dependencies": {
-    "polka": "0.4.0"
+    "polka": "0.5.2"
   },
   "devDependencies": {
     "@babel/cli": "7.5.0",
